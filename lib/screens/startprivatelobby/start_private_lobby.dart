@@ -1,4 +1,5 @@
 import 'package:floor/constants/constants.dart';
+import 'package:floor/screens/chatinfo/chat_info.dart';
 import 'package:floor/screens/startchatprivate/components/start_chat_private_body.dart';
 import 'package:floor/screens/startprivatelobby/components/meeting_cards.dart';
 import 'package:floor/widgets/regular_text.dart';
@@ -258,7 +259,7 @@ class _StartPrivateLobbyScreenState extends State<StartPrivateLobbyScreen> {
                   Center(
                     child: TextButton(
                       onPressed: (){
-                        // Navigator.pushNamed(context, UsersOfficeHoursScreen.routeName);
+                        Navigator.pushNamed(context, ChatInfoScreen.routeName);
                       },
                       child: Text(
                         'Launch',
