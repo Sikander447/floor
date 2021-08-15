@@ -57,7 +57,7 @@ class _ReportLobbyScreenState extends State<ReportLobbyScreen> {
                   ),
                   Center(
                     child: RegularText(
-                      text: "Why are you reporting this Lobby?",
+                      text: "Why are you reporting this Lobby? ",
                       size: 17,
                       fontWeight: FontWeight.w700,
                     ),
