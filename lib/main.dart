@@ -6,6 +6,8 @@ import 'package:floor/screens/frametwo/frame_two.dart';
 import 'package:floor/screens/home/home.dart';
 import 'package:floor/screens/people/people_screen.dart';
 import 'package:floor/screens/startchatprivate/start_chat_private.dart';
+import 'package:floor/screens/userfilter/user_filter.dart';
+import 'package:floor/screens/usersofficehours/users_office_hours.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -27,8 +29,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      home: FrameTwoScreen(),
-      // initialRoute: HomeScreen.routeName,
+      // home: ChatInfoScreen(),
+      initialRoute: HomeScreen.routeName,
 
     );
   }

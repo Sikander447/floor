@@ -1,5 +1,6 @@
 import 'package:floor/constants/constants.dart';
 import 'package:floor/screens/home/components/home_body.dart';
+import 'package:floor/screens/userfilter/user_filter.dart';
 import 'package:floor/widgets/regular_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -209,7 +210,7 @@ class _ReportLobbyScreenState extends State<ReportLobbyScreen> {
                       width: width * 0.9,
                       child: TextButton(
                         onPressed: (){
-                          // Navigator.pushNamed(context, ChannelLobbyScreen.routeName);
+                          Navigator.pushNamed(context, UserFilterScreen.routeName);
                         },
                         child: Text(
                           'Return to Cart',

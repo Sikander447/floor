@@ -14,6 +14,7 @@ import 'package:floor/screens/reportlobby/report_lobby.dart';
 import 'package:floor/screens/startchatprivate/start_chat_private.dart';
 import 'package:floor/screens/startchatpublic/strat_chat_public.dart';
 import 'package:floor/screens/startprivatelobby/start_private_lobby.dart';
+import 'package:floor/screens/userfilter/user_filter.dart';
 import 'package:floor/screens/usersofficehours/users_office_hours.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ final Map<String, WidgetBuilder> routes = {
   ChatInfoScreen.routeName: (context) => ChatInfoScreen(),
   ChannelLobbyScreen.routeName: (context) => ChannelLobbyScreen(),
   ReportLobbyScreen.routeName: (context) => ReportLobbyScreen(),
+  UserFilterScreen.routeName: (context) => UserFilterScreen(),
   FrameTwoScreen.routeName: (context) => FrameTwoScreen(),
 
 };

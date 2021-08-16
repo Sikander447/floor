@@ -3,6 +3,7 @@ class Assets {
   Assets._();
 
   static const String iconsMicIcon = 'assets/icons/mic_icon.jpeg';
+  static const String iconsMicrophoneIcon = 'assets/icons/microphone_icon.jpg';
   static const String iconsRecuritIcon = 'assets/icons/recurit_icon.jpeg';
   static const String imagesFloorLogo = 'assets/images/floor_logo.png';
   static const String imagesGirl = 'assets/images/girl.png';
@@ -10,5 +11,6 @@ class Assets {
   static const String imagesManImage = 'assets/images/man_image.png';
   static const String imagesMarketLogo = 'assets/images/market_logo.jpeg';
   static const String imagesMarketLogoLargeSize = 'assets/images/market_logo_largeSize.jpg';
+  static const String imagesSoundWavesImage = 'assets/images/sound_waves_image.png';
 
 }

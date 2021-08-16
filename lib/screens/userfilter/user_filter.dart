@@ -1,6 +1,7 @@
 import 'package:floor/constants/constants.dart';
 import 'package:floor/screens/chatmenu/chat_menu.dart';
 import 'package:floor/screens/frameone/components/frame_one_body.dart';
+import 'package:floor/screens/frametwo/frame_two.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
@@ -394,56 +395,21 @@ class _UserFilterScreenState extends State<UserFilterScreen> {
                             }),
                       ),
                     ),
-                    SizedBox(
-                      height: height * 0.007,
-                    ),
-                    Container(
 
-                      decoration: BoxDecoration(
-                        color: AppColors.KgrayColor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10,right: 10),
-                        child: DropdownButton(
-                            elevation: 100,
-                            isExpanded: true,
-                            value: _value,
-                            items: [
-                              DropdownMenuItem(
-                                child: Text(
-                                  'People that are looking to...',
-                                  style: TextStyle(
-                                    fontSize: 17,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                value: 1,
-                              ),
-                              DropdownMenuItem(
-                                child: Text("Second Item"),
-                                value: 2,
-                              ),
-                            ],
-                            onChanged: (value) {
-                              setState(() {
-                                _value = value;
-                              });
-                            }),
-                      ),
-                    ),
 
                   ],
                 ),
-                // Spacer(),
-                SizedBox(
-                  height:  height * 0.07,
-                ),
+                Spacer(),
+                // SizedBox(
+                //   height:  height * 0.01,
+                // ),
                 Container(
                   margin: EdgeInsets.only(bottom: 15),
                   alignment: Alignment.center,
                   child: TextButton(
-                    onPressed: null,
+                    onPressed: (){
+                      Navigator.pushNamed(context, FrameTwoScreen.routeName);
+                    },
                     child: Text(
                       'Continue',
                       style: TextStyle(
