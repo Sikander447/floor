@@ -1,4 +1,5 @@
 import 'package:floor/constants/constants.dart';
+import 'package:floor/screens/intro/intro.dart';
 import 'package:floor/widgets/regular_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class FrameTwoScreen extends StatefulWidget {
 class _FrameTwoScreenState extends State<FrameTwoScreen> {
   bool click = false;
   double sliderValue = 25.0;
+
+
 
 
   @override
@@ -64,6 +67,8 @@ class _FrameTwoScreenState extends State<FrameTwoScreen> {
 
           ],
         ),
+
+
         body: Container(
           height: height * 1,
           width: width * 1,
@@ -200,7 +205,9 @@ class _FrameTwoScreenState extends State<FrameTwoScreen> {
                       color: AppColors.KgreenColor,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
 
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, IntroScreen.routeName);
+                      },
                       child: Text('Send' ,style: TextStyle(color: Colors.white,fontSize: 15),),
                     ),
                   ],

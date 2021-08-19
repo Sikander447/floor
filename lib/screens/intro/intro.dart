@@ -1,4 +1,5 @@
 import 'package:floor/constants/constants.dart';
+import 'package:floor/screens/intro/components/intro_checkmark_cards.dart';
 import 'package:floor/widgets/regular_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ class IntroScreen extends StatefulWidget {
   _IntroScreenState createState() => _IntroScreenState();
 }
 class _IntroScreenState extends State<IntroScreen> {
+  OverlayEntry entry;
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -35,10 +38,41 @@ class _IntroScreenState extends State<IntroScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0.0,
+        color: AppColors.KappGradientColorOne,
+        shape: CircularNotchedRectangle(),
+        notchMargin: 4.0,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+
+            TextButton(
+              child: Text(''),
+              onPressed: () {},
+            )
+          ],
+        ),
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        color: AppColors.KtransparentColor,
+        child: FloatingActionButton(
+          elevation: 6.0,
+          backgroundColor: AppColors.KintroSCFlottingActionBtnColor,
+          child: const Icon(Icons.add),
+          onPressed: () {
+            Overlay.of(context).insert(entry);
+          },
+        ),
+      ),
+
       body: Container(
         height: height * 1,
         width: width * 1,
-        color: AppColors.KwhiteColor,
+        color: AppColors.KintrolSCBackGroundColor,
         child: Padding(
           padding: const EdgeInsets.only(
             left: 8,
@@ -75,49 +109,21 @@ class _IntroScreenState extends State<IntroScreen> {
                     ],
                   ),
                 ),
-                Card(
-                  elevation: 0.5,
-                  color: AppColors.KlightgrayColor,
-                  child: ListTile(
-                    leading:  Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          // border: Border.all(color: AppColors.KredColor, width: 5),
-                        ),
-                        child: Image.asset('assets/images/man_image.png',
-                          height: height * 0.09,
-                          width: width * 0.13,
-                        )),
-                    title: RichText(
-                      text: TextSpan(
-                        text: 'Jasmin G.Rangle',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                        // children: <TextSpan>[
-                        //   TextSpan(
-                        //       text: " (She/Her)",
-                        //       style: TextStyle(
-                        //           color: Colors.blueAccent,
-                        //           fontSize: 13)),
-                        // ],
-                      ),
-                    ),
-                    subtitle: RegularText(
-                      textOverFlow: TextOverflow.ellipsis,
-                      text:  '2x Founder, B2B Advisor',
-                      maximumLine: 1,
-                      size: 13,
-                      color: AppColors.KgrayColor,
-                    ),
-                    trailing: CircleAvatar(
-
-                      child: Icon(Icons.check,color: AppColors.KwhiteColor,),
-                    ),
-                  ),
+                IntroCheckMarkCard(
+                    checkMarkIcon: AppColors.KblackColor
                 ),
+                IntroCheckMarkCard(
+                    checkMarkIcon: AppColors.KblueColor
+                ),
+                IntroCheckMarkCard(  checkMarkIcon: AppColors.KblackColor),
+                IntroCheckMarkCard(
+                    checkMarkIcon: AppColors.KblueColor
+                ),
+                IntroCheckMarkCard(  checkMarkIcon: AppColors.KblackColor),
 
+                IntroCheckMarkCard(  checkMarkIcon: AppColors.KblackColor),
+
+                IntroCheckMarkCard(  checkMarkIcon: AppColors.KblackColor),
 
 
 

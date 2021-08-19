@@ -16,7 +16,7 @@ class IntroTopCard extends StatelessWidget {
       width: width * 1,
       child: Card(
         elevation: 2.0,
-        color: AppColors.KlightgrayColor,
+        color: AppColors.KintrotopCardColor,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0)),
         child: Padding(
@@ -73,7 +73,7 @@ class IntroTopCard extends StatelessWidget {
                         text:  'CEO / Founder @ SIlicon Valley\nDenvor, CO',
                         maximumLine: 2,
                         size: 15,
-                        color: AppColors.KgrayColor,
+                        color: AppColors.KblackColor,
                       ),
                       SizedBox(
                         height: height * 0.01,
@@ -124,7 +124,7 @@ class IntroTopCard extends StatelessWidget {
                   // crossAxisSpacing: ,
                   childAspectRatio: 3,
                   scrollDirection: Axis.vertical,
-                  // physics: NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   children: List.generate(
                     3,
                         (index) => Padding(

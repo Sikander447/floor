@@ -17,6 +17,7 @@ class AppColors {
   static Color KgrayColor600 = Colors.grey[600];
   static Color KgrayColor = Colors.grey;
   static Color KlightgrayColor = Color(0xffDEDEDE);
+
   static Color KblueColor = Colors.blue;
   static Color KredColor = Colors.red;
   static Color KwhiteColor = Colors.white;
@@ -28,6 +29,11 @@ class AppColors {
 
   // Chat-Menu Screen Color
   static Color KchatMeunbackgroundSCColor = Color(0xffCDC7C7);
+
+  // Intro Screen Color
+  static Color KintrolSCBackGroundColor = Color(0xfffafafa);
+  static Color KintrotopCardColor = Color(0xffC4C4C4);
+  static Color KintroSCFlottingActionBtnColor = Color(0xff2F50FF);
 
 
 }
