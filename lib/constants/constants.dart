@@ -12,7 +12,6 @@ class AppColors {
 
 
   // Common Colors
-
   static Color KblackColor = Colors.black;
   static Color KlightBlueColor = Color(0xffEEF4FD);
   static Color KgrayColor600 = Colors.grey[600];
