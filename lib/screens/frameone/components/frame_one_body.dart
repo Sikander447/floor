@@ -88,9 +88,20 @@ class _FrameOneBodyState extends State<FrameOneBody> with SingleTickerProviderSt
                         color: AppColors.KgrayColor600,
                         fontSize: 12,
                       ),
-                      suffixIcon: Icon(
-                        Icons.settings,
-                        color: Colors.black,
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(right: 4),
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Container(
+                            // height: height * 0.007,
+                            width: width * 0.1,
+                            decoration: BoxDecoration(
+                              color: AppColors.KblackColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Icon(Icons.filter_list,color: AppColors.KwhiteColor,),
+                          ),
+                        ),
                       ),
                     ),
                   ),

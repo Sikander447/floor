@@ -1,5 +1,6 @@
 import 'package:floor/constants/constants.dart';
 import 'package:floor/screens/intro/components/intro_checkmark_cards.dart';
+import 'package:floor/screens/meetsmenu/meet_menu.dart';
 import 'package:floor/widgets/regular_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class IntroScreen extends StatefulWidget {
   _IntroScreenState createState() => _IntroScreenState();
 }
 class _IntroScreenState extends State<IntroScreen> {
-  OverlayEntry entry;
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class _IntroScreenState extends State<IntroScreen> {
           backgroundColor: AppColors.KintroSCFlottingActionBtnColor,
           child: const Icon(Icons.add),
           onPressed: () {
-            Overlay.of(context).insert(entry);
+            Navigator.pushNamed(context, MeetsMenuScreen.routeName);
           },
         ),
       ),

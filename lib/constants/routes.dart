@@ -1,6 +1,7 @@
 
 // We use name route
 // All our routes will be available here
+import 'package:floor/screens/allofficehours/all_office_hours.dart';
 import 'package:floor/screens/channellobby/channel_lobby.dart';
 import 'package:floor/screens/chatinfo/chat_info.dart';
 import 'package:floor/screens/chatlobby/chat_lobby.dart';
@@ -39,5 +40,6 @@ final Map<String, WidgetBuilder> routes = {
   FrameTwoScreen.routeName: (context) => FrameTwoScreen(),
   IntroScreen.routeName: (context) => IntroScreen(),
   MeetsMenuScreen.routeName: (context) => MeetsMenuScreen(),
+  AllOfficeHoursScreen.routeName: (context) => AllOfficeHoursScreen(),
 
 };

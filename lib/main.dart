@@ -1,4 +1,5 @@
 import 'package:floor/constants/routes.dart';
+import 'package:floor/screens/allofficehours/all_office_hours.dart';
 import 'package:floor/screens/chatinfo/chat_info.dart';
 import 'package:floor/screens/emptyscreen.dart';
 import 'package:floor/screens/frameone/frame_one.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      home: MeetsMenuScreen(),
+      home: AllOfficeHoursScreen(),
       // initialRoute: HomeScreen.routeName,
 
     );
