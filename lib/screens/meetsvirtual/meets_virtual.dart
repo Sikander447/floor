@@ -485,7 +485,6 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
                         text: 'Invite Niches',
                       ),
 
-
                     ],
                   ),
                 ),
