@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      home: AllOfficeHoursScreen(),
-      // initialRoute: HomeScreen.routeName,
+      // home: AllOfficeHoursScreen(),
+      initialRoute: HomeScreen.routeName,
 
     );
   }
