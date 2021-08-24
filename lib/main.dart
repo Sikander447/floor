@@ -7,6 +7,7 @@ import 'package:floor/screens/frametwo/frame_two.dart';
 import 'package:floor/screens/home/home.dart';
 import 'package:floor/screens/intro/intro.dart';
 import 'package:floor/screens/meetsmenu/meet_menu.dart';
+import 'package:floor/screens/meetsvirtual/meets_virtual.dart';
 import 'package:floor/screens/people/people_screen.dart';
 import 'package:floor/screens/startchatprivate/start_chat_private.dart';
 import 'package:floor/screens/userfilter/user_filter.dart';
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      // home: AllOfficeHoursScreen(),
-      initialRoute: HomeScreen.routeName,
+      home: MeetsVirtualScreen(),
+      // initialRoute: HomeScreen.routeName,
 
     );
   }

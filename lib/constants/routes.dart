@@ -12,6 +12,7 @@ import 'package:floor/screens/frametwo/frame_two.dart';
 import 'package:floor/screens/home/home.dart';
 import 'package:floor/screens/intro/intro.dart';
 import 'package:floor/screens/meetsmenu/meet_menu.dart';
+import 'package:floor/screens/meetsvirtual/meets_virtual.dart';
 import 'package:floor/screens/people/people_screen.dart';
 import 'package:floor/screens/reportlobby/report_lobby.dart';
 import 'package:floor/screens/startchatprivate/start_chat_private.dart';
@@ -41,5 +42,6 @@ final Map<String, WidgetBuilder> routes = {
   IntroScreen.routeName: (context) => IntroScreen(),
   MeetsMenuScreen.routeName: (context) => MeetsMenuScreen(),
   AllOfficeHoursScreen.routeName: (context) => AllOfficeHoursScreen(),
+  MeetsVirtualScreen.routeName: (context) => MeetsVirtualScreen(),
 
 };
