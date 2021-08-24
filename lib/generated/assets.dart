@@ -5,6 +5,8 @@ class Assets {
   static const String iconsMicIcon = 'assets/icons/mic_icon.jpeg';
   static const String iconsMicrophoneIcon = 'assets/icons/microphone_icon.jpg';
   static const String iconsRecuritIcon = 'assets/icons/recurit_icon.jpeg';
+  static const String iconsStandinUpMan = 'assets/icons/standin_up_man.png';
+  static const String iconsVoiceSearch = 'assets/icons/voice_search.jpg';
   static const String imagesFloorLogo = 'assets/images/floor_logo.png';
   static const String imagesGirl = 'assets/images/girl.png';
   static const String imagesGirlPic = 'assets/images/girl_pic.png';
