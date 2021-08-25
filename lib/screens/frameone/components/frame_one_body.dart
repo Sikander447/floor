@@ -20,20 +20,7 @@ class _FrameOneBodyState extends State<FrameOneBody> with SingleTickerProviderSt
       length: 2,
       vsync: this,
     );
-    // _pages = [
-    //   {
-    //     'title': '',
-    //     // 'page' : ,
-    //   },
-    //   {
-    //     'title': '',
-    //     // 'page' : ,
-    //   },
-    //   {
-    //     'title': '',
-    //     // 'page' : ,
-    //   },
-    // ];
+
     super.initState();
   }
 

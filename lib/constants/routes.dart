@@ -11,6 +11,7 @@ import 'package:floor/screens/frameone/frame_one.dart';
 import 'package:floor/screens/frametwo/frame_two.dart';
 import 'package:floor/screens/home/home.dart';
 import 'package:floor/screens/intro/intro.dart';
+import 'package:floor/screens/invitemembers/invite_members.dart';
 import 'package:floor/screens/meetsmenu/meet_menu.dart';
 import 'package:floor/screens/meetsvirtual/meets_virtual.dart';
 import 'package:floor/screens/people/people_screen.dart';
@@ -43,5 +44,6 @@ final Map<String, WidgetBuilder> routes = {
   MeetsMenuScreen.routeName: (context) => MeetsMenuScreen(),
   AllOfficeHoursScreen.routeName: (context) => AllOfficeHoursScreen(),
   MeetsVirtualScreen.routeName: (context) => MeetsVirtualScreen(),
+  InviteMembersScreen.routeName: (context) => InviteMembersScreen(),
 
 };
