@@ -112,6 +112,7 @@ class _InviteMembersScreenState extends State<InviteMembersScreen> {
                           width: width * 0.85,
                           child: GridView.count(
                             crossAxisCount: 3,
+                            physics: NeverScrollableScrollPhysics(),
                             children: List.generate(
                               6,
                                   (index) => ClipRRect(
@@ -223,6 +224,173 @@ class _InviteMembersScreenState extends State<InviteMembersScreen> {
                       height: height * 0.03,
                     ),
 
+                    Stack(
+                      fit: StackFit.loose,
+                      children: [
+                        Positioned(
+                          top: 10,
+                          left: 15,
+                          child: CircleAvatar(
+                            radius: 5,
+                            backgroundColor: AppColors.KblackColor,
+                          ),),
+                        Container(
+                          width: width * 0.95,
+                          padding: EdgeInsets.only(left: 5),
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://www.entertales.com/wp-content/uploads/forever-single-girl-1280x720.jpg'),
+                            ),
+                            title: Text(
+                              'Jasmin G. Rangle',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            subtitle: Text(
+                              '2x Founder, B2B Advisor',
+                              style: TextStyle(
+                                color: Colors.pink[200],
+                                fontSize: 9,
+                              ),
+                            ),
+                            trailing: Container(
+                                height: height * 0.045,
+                                width: width * 0.2,
+                                decoration: BoxDecoration(
+                                    color: AppColors.KlightGreenColor,
+                                    borderRadius: BorderRadius.circular(5)
+                                ),
+                                child: Center(
+                                  child: RegularText(
+                                    text: 'Invite',size: 15,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: width * 0.95,
+                      padding: EdgeInsets.only(left: 5),
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://www.entertales.com/wp-content/uploads/forever-single-girl-1280x720.jpg'),
+                        ),
+                        title: Text(
+                          'Jasmin G. Rangle',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        subtitle: Text(
+                          '2x Founder, B2B Advisor',
+                          style: TextStyle(
+                            color: Colors.pink[200],
+                            fontSize: 9,
+                          ),
+                        ),
+                        trailing: Container(
+                            height: height * 0.045,
+                            width: width * 0.2,
+                            decoration: BoxDecoration(
+                                color: AppColors.KlightGreenColor,
+                                borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: RegularText(
+                                text: 'Invite',size: 15,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: height * 0.03,
+                    ),
+                RegularText(
+                text: 'Invite via Email',
+                textOverFlow: TextOverflow.ellipsis,
+                maximumLine: 1,
+                size: 16,
+                fontWeight: FontWeight.w600,
+              ),
+                    SizedBox(
+                      height: height * 0.03,
+                    ),
+                    Container(
+                      height: height * 0.06,
+                      width: width * 1,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5,right: 5),
+                        child: TextField(
+                          controller: null,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppColors.KgrayColor
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppColors.KgrayColor
+                              ),
+                            ),
+
+                            hintText: 'abcd@gmail.com',
+                            hintStyle: TextStyle(
+                              color: AppColors.KgrayColor600,
+                              fontSize: 12,
+                            ),
+                            suffixIcon: Container(
+                              // height: height * 0.007,
+                              width: width * 0.1,
+                              decoration: BoxDecoration(
+                                color: AppColors.KgrayColor,
+                                borderRadius: BorderRadius.circular(3),
+                              ),
+                              child: Icon(Icons.mail_outline_rounded,
+                                size: 35,
+                                color: AppColors.KblackColor,),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 0.05,
+                    ),
+                    Center(
+                      child: TextButton(
+                        onPressed: null,
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(
+                            color: AppColors.KwhiteColor,
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            AppColors.KblackColor,
+                          ),
+                          minimumSize: MaterialStateProperty.all(Size(400, 40)),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ),

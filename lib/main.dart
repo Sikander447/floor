@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      home: InviteMembersScreen(),
-      // initialRoute: HomeScreen.routeName,
+      // home: InviteMembersScreen(),
+      initialRoute: HomeScreen.routeName,
 
     );
   }

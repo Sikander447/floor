@@ -1,5 +1,6 @@
 
 import 'package:floor/constants/constants.dart';
+import 'package:floor/screens/invitemembers/invite_members.dart';
 import 'package:floor/screens/meetsvirtual/components/bottom_circle_btn.dart';
 import 'package:floor/screens/meetsvirtual/components/text_and_icon_container.dart';
 import 'package:floor/widgets/regular_text.dart';
@@ -566,7 +567,7 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
 
           InkWell(
             onTap: (){
-
+              Navigator.pushNamed(context, InviteMembersScreen.routeName);
 
             },
             child:ButtomCircleButton(

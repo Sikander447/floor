@@ -23,6 +23,7 @@ class AppColors {
   static Color KredColor = Colors.red;
   static Color KwhiteColor = Colors.white;
   static Color KgreenColor = Colors.green;
+  static Color KlightGreenColor = Color(0xff80FF6B);
   static Color KtransparentColor = Colors.transparent;
 
   //CreateChannelScreen colors.
