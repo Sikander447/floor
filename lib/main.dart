@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
-// ALi hader
+// ALi hadar
 void main() {
 
   SystemChrome.setSystemUIOverlayStyle(
