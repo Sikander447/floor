@@ -5,9 +5,10 @@ import 'package:flutter/cupertino.dart';
 
 class TextIconContainer extends StatelessWidget {
   final String text;
-  final Icon icon;
 
-  TextIconContainer({@ required this.icon,this.text});
+  final Widget next;
+
+  TextIconContainer({@ required this.next,this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,9 @@ class TextIconContainer extends StatelessWidget {
                 size: 13,
                 fontWeight: FontWeight.normal,
               ),
-              Icon(Icons.arrow_forward_ios_rounded,
+              Icon(
+                // next,
+                Icons.arrow_forward_ios_rounded,
                 size: 10,
               ),
             ],

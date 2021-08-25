@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      home: MeetsVirtualScreen(),
-      // initialRoute: HomeScreen.routeName,
+      // home: MeetsVirtualScreen(),
+      initialRoute: HomeScreen.routeName,
 
     );
   }

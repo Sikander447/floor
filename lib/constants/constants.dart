@@ -37,4 +37,8 @@ class AppColors {
   static Color KintroSCFlottingActionBtnColor = Color(0xff2F50FF);
 
 
+// Meets Virtual Screen Color
+  static Color KmeetVirtualSCBtnOneColor = Color(0xffD96FFF);
+  static Color KmeetVirtualSCBtnTwoColor = Color(0xff6F8EFF);
+  static Color KmeetVirtualSCBtnThreeColor = Color(0xff21E458);
 }

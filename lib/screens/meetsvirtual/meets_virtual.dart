@@ -1,4 +1,6 @@
+
 import 'package:floor/constants/constants.dart';
+import 'package:floor/screens/meetsvirtual/components/bottom_circle_btn.dart';
 import 'package:floor/screens/meetsvirtual/components/text_and_icon_container.dart';
 import 'package:floor/widgets/regular_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,6 +14,7 @@ class MeetsVirtualScreen extends StatefulWidget {
 class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
 
   int counter = 1;
+  bool status = false;
 
   var currentP;
   void increment() {
@@ -49,6 +52,7 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.KappBackgroundColor,
+        bottomNavigationBar: bottomNavigationItem(),
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: AppColors.KwhiteColor,
@@ -109,68 +113,57 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
                       SizedBox(
                         height: height * 0.005,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 12,left: 12),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            RegularText(
-                              text: 'Title',
-                              textOverFlow: TextOverflow.ellipsis,
-                              maximumLine: 1,
-                              size: 17,
-                              fontWeight: FontWeight.w600,
-                            ),
+                      RegularText(
+                        text: 'Title',
+                        textOverFlow: TextOverflow.ellipsis,
+                        maximumLine: 1,
+                        size: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
 
-                            SizedBox(
-                              height: height * 0.01,
+                      SizedBox(
+                        height: height * 0.01,
+                      ),
+                      Container(
+                        height: height * 0.06,
+                        child: TextField(
+                          controller: null,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            Container(
-                              height: height * 0.06,
-                              child: TextField(
-                                controller: null,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      // color: Colors.pink[100],
-                                    ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      // color: Colors.pink[100],
-                                    ),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  // contentPadding: EdgeInsets.symmetric(horizontal: 10,vertical: 30),
-                                  hintText: 'What do you want to talk about ?',
-                                  hintStyle: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                // color: Colors.pink[100],
                               ),
                             ),
-                            SizedBox(height: height * 0.02,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                // color: Colors.pink[100],
+                              ),
                             ),
-                            RegularText(
-                              text: 'Choose Topics',
-                              textOverFlow: TextOverflow.ellipsis,
-                              maximumLine: 1,
-                              size: 17,
+                            filled: true,
+                            fillColor: Colors.white,
+                            // contentPadding: EdgeInsets.symmetric(horizontal: 10,vertical: 30),
+                            hintText: 'What do you want to talk about ?',
+                            hintStyle: TextStyle(
                               fontWeight: FontWeight.w600,
                             ),
-
-                            SizedBox(
-                              height: height * 0.01,
-                            ),
-
-
-
-                          ],
+                          ),
                         ),
+                      ),
+                      SizedBox(height: height * 0.02,
+                      ),
+                      RegularText(
+                        text: 'Choose Topics',
+                        textOverFlow: TextOverflow.ellipsis,
+                        maximumLine: 1,
+                        size: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      SizedBox(
+                        height: height * 0.01,
                       ),
                       Container(
                           height: height * 0.11,
@@ -477,6 +470,7 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
                       ),
                       TextIconContainer(
                         text: 'Invite Friends',
+
                       ),
                       TextIconContainer(
                         text: 'Invite Channel',
@@ -484,6 +478,49 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
                       TextIconContainer(
                         text: 'Invite Niches',
                       ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 5.0
+                        ),
+                        child: Container(
+                          width: width * 1,
+                          height: height * 0.06,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: AppColors.KgrayColor),
+                            color: AppColors.KtransparentColor,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10,right: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RegularText(
+                                  text: 'Only allow people invited',
+                                  textOverFlow: TextOverflow.ellipsis,
+                                  maximumLine: 1,
+                                  color: AppColors.KgrayColor,
+                                  size: 13,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                Switch(
+                                  activeColor: Colors.pinkAccent,
+                                  value: status,
+                                  onChanged: (value) {
+                                    print("VALUE : $value");
+                                    setState(() {
+                                      status = value;
+                                    });
+                                  },
+                                )
+
+                              ],
+                            ),
+                          ),
+
+                        ),
+                      )
 
                     ],
                   ),
@@ -495,4 +532,55 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
 
     );
   }
+
+
+
+  Widget bottomNavigationItem() {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    return Container(
+      width: width,
+      height: height * .09,
+      padding: EdgeInsets.only(left: 10, right: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          InkWell(
+            onTap: (){},
+            child:ButtomCircleButton(
+              text: 'Today\n7:00pm',
+              color: AppColors.KmeetVirtualSCBtnOneColor,
+            ),
+          ),
+
+          InkWell(
+            onTap: (){
+
+
+            },
+            child:ButtomCircleButton(
+              text: 'Next Week',
+              color: AppColors.KmeetVirtualSCBtnTwoColor,
+            ),
+          ),
+
+          InkWell(
+            onTap: (){
+
+
+            },
+            child:ButtomCircleButton(
+              text: 'Schedule',
+              color: AppColors.KmeetVirtualSCBtnThreeColor,
+            ),
+          ),
+
+
+
+
+        ],
+      ),
+    );
+  }
+
 }
