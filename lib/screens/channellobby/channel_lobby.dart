@@ -4,6 +4,8 @@ import 'package:floor/screens/reportlobby/report_lobby.dart';
 import 'package:floor/widgets/regular_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:focused_menu/focused_menu.dart';
+import 'package:focused_menu/modals.dart';
 
 class ChannelLobbyScreen extends StatefulWidget {
   static String routeName = "/channel_lobby";
@@ -164,7 +166,10 @@ class _ChannelLobbyScreenState extends State<ChannelLobbyScreen> {
                   SizedBox(
                     height: height * 0.01,
                   ),
-
+                  PopUpMenuChannelLobby(),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
                   Container(
                     height: height * 0.8,
                     width: width * 1,
@@ -219,4 +224,119 @@ class _ChannelLobbyScreenState extends State<ChannelLobbyScreen> {
       ),
     );
   }
+}
+
+
+//popup menu
+
+class PopUpMenuChannelLobby extends StatelessWidget {
+  const PopUpMenuChannelLobby({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return Container(
+      height: height * 0.1,
+      width: width * 1,
+      // color: Colors.red,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+        itemCount: 1,
+        itemBuilder: (context, index) {
+          return FocusedMenuHolder(
+            menuWidth: MediaQuery.of(context).size.width * 0.50,
+            blurSize: 5.0,
+            menuItemExtent: 45,
+            menuBoxDecoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.all(Radius.circular(15.0))),
+            duration: Duration(milliseconds: 100),
+            animateMenuItems: true,
+            blurBackgroundColor: Colors.black54,
+            bottomOffsetHeight: 100,
+            openWithTap: true,
+            menuItems: <FocusedMenuItem>[
+              // FocusedMenuItem(
+              //   title: Row(
+              //     children: [
+              //       Column(
+              //         children: [
+              //           Icon(Icons.connect_without_contact_rounded),
+              //           Text("Create New Channel",style: TextStyle(
+              //             fontSize: 5,
+              //           ),),
+              //         ],
+              //       ),
+              //     ],
+              //   ),
+              //
+              //   onPressed: () async{
+              //   },
+              // ),
+              FocusedMenuItem(
+                title: Text("One-to-many"),
+                trailingIcon: Icon(Icons.connect_without_contact_sharp),
+                onPressed: () async{
+                },
+              ),
+              FocusedMenuItem(
+                title: Text("Private"),
+                trailingIcon: Icon(Icons.lock_open),
+                onPressed: () async{
+                },
+              ),
+              FocusedMenuItem(
+                title: Text("Group Message"),
+                trailingIcon: Icon(Icons.person),
+                onPressed: () async{
+                },
+              ),
+              FocusedMenuItem(
+                title: Text("Group Chat"),
+                trailingIcon: Icon(Icons.message),
+                onPressed: () async{
+                },
+              ),
+            ],
+            onPressed: () {},
+            child:   ListTile(
+              // contentPadding: EdgeInsets.only(left: 8),
+              leading: CircleAvatar(
+                radius: 30.0,
+                backgroundImage: NetworkImage(
+                  'https://www.entertales.com/wp-content/uploads/forever-single-girl-1280x720.jpg',
+                ),
+              ),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Jasmin G.Rangel',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17,
+                    ),
+                  ),
+
+                ],
+              ),
+              subtitle: Text(
+                'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor',
+                overflow: TextOverflow.ellipsis,
+                maxLines: 3,
+                style: TextStyle(
+                  fontSize: 13,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+
+
 }

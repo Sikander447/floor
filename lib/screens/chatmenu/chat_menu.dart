@@ -2,6 +2,8 @@ import 'package:floor/constants/constants.dart';
 import 'package:floor/screens/people/people_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:focused_menu/focused_menu.dart';
+import 'package:focused_menu/modals.dart';
 
 class ChatMenuScreen extends StatefulWidget {
   static String routeName = "/chat_menu";
@@ -80,6 +82,9 @@ class _ChatMenuScreenState extends State<ChatMenuScreen> {
               ],
             ),
           ),
+          title: Center(child: Text('Chat Menu',style: TextStyle(
+            color: AppColors.KblackColor,
+          ),)),
           actions: [
             Icon(
               Icons.calendar_today,
@@ -548,9 +553,7 @@ class _ChatMenuScreenState extends State<ChatMenuScreen> {
                                   fontSize: 12,
                                 ),
                               ),
-                              Icon(
-                                Icons.more_horiz,
-                              ),
+                              PopUpMenuFlottingAction(),
                             ],
                           ),
 
@@ -851,3 +854,75 @@ class _ChatMenuScreenState extends State<ChatMenuScreen> {
     );
   }
 }
+
+
+class PopUpMenuFlottingAction extends StatelessWidget {
+  const PopUpMenuFlottingAction({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return Container(
+      height: height * 0.03,
+      width: width * 0.06,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+        itemCount: 1,
+        itemBuilder: (context, index) {
+          return FocusedMenuHolder(
+            menuWidth: MediaQuery.of(context).size.width * 0.50,
+            blurSize: 5.0,
+            menuItemExtent: 45,
+            menuBoxDecoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.all(Radius.circular(15.0))),
+            duration: Duration(milliseconds: 100),
+            animateMenuItems: true,
+            blurBackgroundColor: Colors.black54,
+            bottomOffsetHeight: 100,
+            openWithTap: true,
+            menuItems: <FocusedMenuItem>[
+              FocusedMenuItem(
+                title: Text("Schedule Meet"),
+                trailingIcon: Icon(Icons.calendar_today),
+                onPressed: () async{
+                  // await WcFlutterShare.share(
+                  //   // sharePopupTitle: 'https://example.com',
+                  //   subject: 'This is subject',
+                  //   text: 'This is text',
+                  //   mimeType: 'text/plain',
+                  // );
+                },
+              ),
+              FocusedMenuItem(
+                title: Text("Start Public Lobby"),
+                trailingIcon: Icon(Icons.person),
+                onPressed: (){
+
+                },
+              ),
+              FocusedMenuItem(
+                title: Text("Start Private Meeting"),
+                trailingIcon: Icon(Icons.person),
+                onPressed: (){
+
+                },
+              ),
+            ],
+            onPressed: () {},
+            child:   Icon(
+              Icons.more_horiz,
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+
+
+}
+
+

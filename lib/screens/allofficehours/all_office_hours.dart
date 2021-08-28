@@ -152,7 +152,7 @@ class _AllOfficeHoursScreenState extends State<AllOfficeHoursScreen> {
                     itemBuilder: (context,index){
                       return  InkWell(
                         onTap: (){
-                          Navigator.pushNamed(context, MeetsVirtualScreen.routeName);
+                          _deleteEventBottomSheet(context);
                         },
                         child: Card(
                           elevation: 5.0,
@@ -250,4 +250,82 @@ class _AllOfficeHoursScreenState extends State<AllOfficeHoursScreen> {
       // backgroundColor: AppColors.KappBackgroundColor
     );
   }
+
+  void _deleteEventBottomSheet(context){
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc){
+          return Container(
+            height: height * 0.2,
+            child: new Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+             Row(
+               mainAxisAlignment: MainAxisAlignment.start,
+               children: [
+                 Padding(
+                   padding: const EdgeInsets.only(left: 10,top: 5.0,bottom: 10),
+                   child: RegularText(
+                     text: 'Delete Event',
+                     fontWeight: FontWeight.w500,
+                     size: 17,
+
+                   ),
+                 )
+               ],
+             ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10,),
+                  child: RegularText(
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor lorem eget finibus pretium.',
+                    fontWeight: FontWeight.normal,
+                    size: 13,
+                  ),
+                ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    MaterialButton(
+                      height: height * 0.04,
+                      minWidth:  width * 0.3,
+                      // color: AppColors.KgreenColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.red)
+                      ),
+
+                      onPressed: () {
+                        Navigator.pushNamed(context, MeetsVirtualScreen.routeName);
+                      },
+                      child: Text('Delete Event' ,style: TextStyle(color: AppColors.KredColor,fontSize: 15),),
+                    ),
+                    MaterialButton(
+                      height: height * 0.04,
+                      minWidth:  width * 0.3,
+                      // color: AppColors.KgreenColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color:AppColors.KgrayColor)
+                      ),
+
+                      onPressed: () {
+                        Navigator.pushNamed(context, MeetsVirtualScreen.routeName);
+                      },
+                      child: Text('' ,style: TextStyle(color: AppColors.KredColor,fontSize: 15),),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        }
+    );
+  }
+
 }

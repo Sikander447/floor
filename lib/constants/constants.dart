@@ -42,4 +42,8 @@ class AppColors {
   static Color KmeetVirtualSCBtnOneColor = Color(0xffD96FFF);
   static Color KmeetVirtualSCBtnTwoColor = Color(0xff6F8EFF);
   static Color KmeetVirtualSCBtnThreeColor = Color(0xff21E458);
+
+  // Chat_lobby Screen Color
+  static Color KbottomSheetBtnOneColor = Color(0xffE4DEDE);
+
 }

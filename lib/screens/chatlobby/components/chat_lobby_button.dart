@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ChatLobbyButton extends StatelessWidget {
-  ChatLobbyButton({this.text, this.btnClr});
+  ChatLobbyButton({this.text,this.onClick, this.btnClr});
 
   final String text;
   final int btnClr;
+  final Function onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class ChatLobbyButton extends StatelessWidget {
       height: height * 0.04,
       // minWidth:  width * 0.2,
       color: Color(btnClr),
-      onPressed: () {},
+      onPressed: onClick,
       child: Text(text ,style: TextStyle(color: Colors.white,fontSize: 15),),
     );
   }

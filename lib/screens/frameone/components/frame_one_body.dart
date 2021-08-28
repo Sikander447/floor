@@ -6,6 +6,7 @@ import 'package:floor/screens/startchatprivate/start_chat_private.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
 class FrameOneBody extends StatefulWidget {
   @override
   _FrameOneBodyState createState() => _FrameOneBodyState();
@@ -159,4 +160,14 @@ class _FrameOneBodyState extends State<FrameOneBody> with SingleTickerProviderSt
       ),
     );
   }
+
+  contentBox(context){
+    return Stack(
+      children: <Widget>[
+
+      ],
+    );
+  }
 }
+
+
