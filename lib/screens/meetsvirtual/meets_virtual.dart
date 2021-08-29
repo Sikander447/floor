@@ -541,7 +541,7 @@ class _MeetsVirtualScreenState extends State<MeetsVirtualScreen> {
     var height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: height * .09,
+      height: height * .07,
       padding: EdgeInsets.only(left: 10, right: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -510,7 +510,7 @@ class ChatLobbyBody extends StatelessWidget {
           return SafeArea(
             child: Container(
               height: height * 0.4,
-              child: new Column(
+              child:  Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -687,7 +687,7 @@ class PopUpMenu extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Expanded(
         child: ListView.builder(
-      physics: BouncingScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
       // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
       itemCount: 1,
       itemBuilder: (context, index) {
@@ -709,7 +709,7 @@ class PopUpMenu extends StatelessWidget {
                 trailingIcon: Icon(Icons.share),
                 onPressed: () async{
                  await WcFlutterShare.share(
-                      // sharePopupTitle: 'https://example.com',
+                      sharePopupTitle: 'https://example.com',
                       subject: 'This is subject',
                       text: 'This is text',
                       mimeType: 'text/plain',

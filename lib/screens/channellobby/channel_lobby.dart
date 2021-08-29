@@ -171,13 +171,13 @@ class _ChannelLobbyScreenState extends State<ChannelLobbyScreen> {
                     height: height * 0.03,
                   ),
                   Container(
-                    height: height * 0.8,
+                    height: height * 1,
                     width: width * 1,
                     child: GridView.count(
                       padding: EdgeInsets.zero,
                       crossAxisCount: 1,
                       childAspectRatio: 4,
-                      // physics: NeverScrollableScrollPhysics(),
+                      physics: NeverScrollableScrollPhysics(),
                       children: List.generate(
                         12,
                             (index) =>  ListTile(
